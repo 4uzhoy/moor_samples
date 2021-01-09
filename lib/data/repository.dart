@@ -62,22 +62,6 @@ class Repository {
     });
   }
 
-  Future<void> _insertCustomer() async {
-    await _database.transaction(() async {
-      await _database
-          .into(_database.customersTable)
-          .insertOnConflictUpdate(CustomersTableCompanion.insert(
-            firstName: 'Иван',
-            lastName: 'Васильев',
-          ));
-      await _database
-          .into(_database.customersTable)
-          .insertOnConflictUpdate(CustomersTableCompanion.insert(
-            firstName: 'Василий',
-            lastName: 'Иванов',
-          ));
-    });
-  }
 
   /// читаем ProductWithCategoryAndBrand с помощью дао
   Future<String> readProductsWithDaoWithJoin() async {

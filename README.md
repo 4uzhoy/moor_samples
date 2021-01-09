@@ -51,3 +51,4 @@ void main(List<String> arguments) {
   ProductDao
 ])
 ```
+Результат можно увидеть в database.g.dart после запуска кодогенерации
